@@ -9,7 +9,7 @@ const production = !process.env.ROLLUP_WATCH;
 export default {
 	entry: 'src/main.js',
 	dest: 'public/svelte/bundle.js',
-	format: 'umd',
+	format: 'iife',
 	moduleName: 'MyThing',
 	sourceMap: true,
 	plugins: [
