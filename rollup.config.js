@@ -7,7 +7,7 @@ import uglify from 'rollup-plugin-uglify';
 const production = !process.env.ROLLUP_WATCH;
 
 export default {
-	entry: 'src/main.js',
+	entry: 'src/MyThing.html',
 	dest: 'public/svelte/bundle.js',
 	format: 'iife',
 	moduleName: 'MyThing',
@@ -35,7 +35,7 @@ export default {
 
 		// If we're building for production (npm run build
 		// instead of npm run dev), transpile and minify
-		production && buble({ exclude: 'node_modules/**' }),
+		// production && buble({ exclude: 'node_modules/**' }),
 		// production && uglify()
 	]
 };
