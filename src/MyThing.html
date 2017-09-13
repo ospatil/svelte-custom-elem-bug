@@ -1,7 +1,29 @@
 <h2>I'm a custom element.</h2>
+<button on:click="onClick()">Display Message</button>
+<p>The inbound <em>msg</em> attribute will be displayed below on the button click:</p>
+<p ref:msgDisplay class="msg"></p>
+
+<style>
+	.msg {
+		font-weight: bold;
+		color: navy;
+	}
+</style>
 
 <script>
   export default {
-    tag: 'my-thing'
+    tag: 'my-thing',
+
+    data() {
+      return {
+        msg: ''
+      }
+    },
+
+    methods: {
+      onClick() {
+        this.refs.msgDisplay.innerText = this.get('msg');
+      }
+    }
   }
 </script>
